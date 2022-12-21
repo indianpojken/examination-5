@@ -4,6 +4,7 @@ function toggleView() {
     document.querySelector('#library')?.classList.add('slide-from-left');
     document.querySelector('#library')?.classList.toggle('hidden');
     document.querySelector('#book')?.classList.toggle('hidden');
+    clearSearch();
 }
 function renderBook(book) {
     const query = (query) => document.querySelector(query);
@@ -42,4 +43,23 @@ function renderBooks(books) {
         document.querySelector('.books__grid')?.append(template);
     });
 }
-export { renderBooks, toggleView };
+function renderSearchResult(book) {
+    const [template] = (document.querySelector('.search__results > template')
+        ?.content.cloneNode(true)).children;
+    template.querySelector('.search__title').innerText = book.title;
+    template.querySelector('.search__author').innerText = book.author;
+    template.querySelector('.search__book').style.background = `${bookBackground},${book.color}`;
+    template.addEventListener('click', () => {
+        renderBook(book);
+        toggleView();
+    });
+    document.querySelector('.search__results')?.append(template);
+}
+function clearSearch() {
+    document.querySelector('.search__results')?.classList.add('hidden');
+    document.querySelectorAll('.search__results > .search__result').forEach((result) => {
+        result.remove();
+    });
+    document.querySelector('.search__searchbar').value = '';
+}
+export { renderBooks, toggleView, renderSearchResult };

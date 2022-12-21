@@ -7,6 +7,7 @@ function toggleView(): void {
     document.querySelector('#library')?.classList.add('slide-from-left');
     document.querySelector('#library')?.classList.toggle('hidden');
     document.querySelector('#book')?.classList.toggle('hidden');
+    clearSearch();
 }
 
 function renderBook(book: Book): void {
@@ -57,4 +58,31 @@ function renderBooks(books: Book[]): void {
     });
 }
 
-export { renderBooks, toggleView };
+function renderSearchResult(book: Book) {
+    const [template] =
+        (document.querySelector<HTMLTemplateElement>('.search__results > template')
+            ?.content.cloneNode(true) as HTMLElement).children;
+
+    template.querySelector<HTMLElement>('.search__title')!.innerText = book.title;
+    template.querySelector<HTMLElement>('.search__author')!.innerText = book.author;
+    (template.querySelector<HTMLElement>('.search__book') as HTMLElement).style.background = `${bookBackground},${book.color}`;
+
+    template.addEventListener('click', () => {
+        renderBook(book);
+        toggleView();
+    });
+
+    document.querySelector('.search__results')?.append(template);
+}
+
+function clearSearch(): void {
+    document.querySelector('.search__results')?.classList.add('hidden');
+
+    document.querySelectorAll('.search__results > .search__result').forEach((result) => {
+        result.remove();
+    });
+
+    document.querySelector<HTMLInputElement>('.search__searchbar')!.value = '';
+}
+
+export { renderBooks, toggleView, renderSearchResult };

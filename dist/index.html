@@ -16,8 +16,25 @@
                 <h1>
                     Classic Childrens Books
                 </h1>
-                <input type="text" class="books__search" id="search" name="search" placeholder="Search...">
             </header>
+
+            <section class="search">
+                <input type="text" class="search__searchbar" id="search" name="search" placeholder="Search...">
+                <section class="search__results hidden">
+                    <template>
+                        <article class="search__result">
+                            <aside class="search__book">
+                                <aside></aside>
+                            </aside>
+
+                            <aside class="search__info">
+                                <p class="search__title"></p>
+                                <p class="search__author"></p>
+                            </aside>
+                        </article>
+                    </template>
+                </section>
+            </section>
 
             <section class="books__grid">
                 <template>
