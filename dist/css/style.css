@@ -27,6 +27,7 @@ body {
     justify-content: center;
     margin: 0;
     width: 100%;
+    overflow: auto;
 }
 
 .slide-from-left {
