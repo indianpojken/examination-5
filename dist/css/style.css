@@ -229,6 +229,10 @@ body {
     color: rgba(255, 255, 255, 0.8);
 }
 
+.book__information .book__author::before {
+    content: 'By ';
+}
+
 .book__back-button {
     display: flex;
     align-items: center;
@@ -269,6 +273,7 @@ body {
     font-size: 14px;
     border-radius: 2px;
     padding: 8px 8px;
+    margin-bottom: auto;
 }
 
 .book__stats article {
@@ -290,7 +295,7 @@ body {
 }
 
 .button {
-    margin-top: auto;
+    margin-top: 20px;
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 500;
