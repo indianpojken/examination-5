@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini library</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <main id="library" class="page">
+        <section class="books">
+            <header class="books__header">
+                <h1>
+                    Classic Childrens Books
+                </h1>
+                <input type="text" class="books__search" id="search" name="search" placeholder="Search...">
+            </header>
+
+            <section class="books__grid">
+                <template>
+                    <article class="books__book">
+                        <aside class="books__spine"></aside>
+                        <section class="books__info">
+                            <h2 class="books__title"></h2>
+                            <h3 class="books__author"></h3>
+                        </section>
+                    </article>
+                </template>
+            </section>
+        </section>
+    </main>
+
+    <section id="book" class="page hidden">
+        <article class="book">
+            <button class="book__back-button">
+                <svg width="25" height="16" viewBox="0 0 25 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M0.292892 7.29289C-0.0976315 7.68342 -0.0976315 8.31658 0.292892 8.70711L6.65685 15.0711C7.04738 15.4616 7.68054 15.4616 8.07107 15.0711C8.46159 14.6805 8.46159 14.0474 8.07107 13.6569L2.41421 8L8.07107 2.34315C8.46159 1.95262 8.46159 1.31946 8.07107 0.928932C7.68054 0.538408 7.04738 0.538408 6.65685 0.928932L0.292892 7.29289ZM25 7L1 7V9L25 9V7Z"
+                        fill="black" fill-opacity="0.8" />
+                </svg>
+            </button>
+
+            <section>
+                <aside class="book__book">
+                    <aside class="book__spine"></aside>
+                    <section class="book__info">
+                        <h2 class="book__title"></h2>
+                        <h3 class="book__author"></h3>
+                    </section>
+                </aside>
+
+                <aside class="book__information">
+                    <header class="book__header">
+                        <h2 class="book__title"></h2>
+                        <h3 class="book__author"></h3>
+                    </header>
+
+                    <p class="book__plot"></p>
+
+                    <section class="book__stats">
+                        <article class="book__audiance">
+                            <p class="book__stat-title">Audience</p>
+                            <p class="book__stat"></p>
+                        </article>
+
+                        <article class="book__first-published">
+                            <p class="book__stat-title">First published</p>
+                            <p class="book__stat"></p>
+                        </article>
+
+                        <article class="book__pages">
+                            <p class="book__stat-title">Pages</p>
+                            <p class="book__stat"></p>
+                        </article>
+
+                        <article class="book__publisher">
+                            <p class="book__stat-title">Publisher</p>
+                            <p class="book__stat"></p>
+                        </article>
+                    </section>
+
+                    <button class="button">
+                        Oh, I want to read it!
+                    </button>
+                </aside>
+            </section>
+
+        </article>
+    </section>
+</body>
+
+<script src="js/index.js" type="module"></script>
+
+</html>
