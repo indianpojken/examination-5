@@ -94,7 +94,6 @@ body {
     padding: 0.5rem;
     border-radius: 5px;
     display: flex;
-    transition: all ease 0.1s;
 }
 
 .search__result:hover {
